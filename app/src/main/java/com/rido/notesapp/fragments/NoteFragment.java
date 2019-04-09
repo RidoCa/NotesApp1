@@ -64,10 +64,10 @@ public class NoteFragment extends Fragment {
 
         adapter = new NoteAdapter(getContext(), Data.getNotes());
         recyclerView.setAdapter(adapter);
-//                displayAsList();
-        if (session.getLayout()==1){
-            displayAsGrid();
-        }
+                displayAsList();
+//        if (session.getLayout()==1){
+//            displayAsGrid();
+//        }
 
         return view;
     }

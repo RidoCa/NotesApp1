@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         if (user != null) {
             message = "Welcome " + username;
             session.setUser(username);
-            session.setLayout(1);
+//            session.setLayout(1);
         }
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show();
         addFragment();
