@@ -19,6 +19,9 @@ import com.rido.notesapp.Adapters.NoteAdapter;
 import com.rido.notesapp.R;
 import com.rido.notesapp.models.Constant;
 import com.rido.notesapp.models.Data;
+import com.rido.notesapp.models.Session;
+import com.rido.notesapp.models.Setting;
+
 
 import static android.content.ContentValues.TAG;
 
@@ -26,6 +29,9 @@ import static android.content.ContentValues.TAG;
  * A simple {@link Fragment} subclass.
  */
 public class NoteFragment extends Fragment {
+
+    Setting settings;
+    Session session;
 
     private RecyclerView recyclerView;
     private NoteAdapter adapter;
@@ -44,6 +50,9 @@ public class NoteFragment extends Fragment {
     }
 
 
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,9 +60,14 @@ public class NoteFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_note, container, false);
         recyclerView = view.findViewById(R.id.rv_notes);
 
+
+
         adapter = new NoteAdapter(getContext(), Data.getNotes());
         recyclerView.setAdapter(adapter);
-        displayAsList();
+//                displayAsList();
+        if (session.getLayout()==1){
+            displayAsGrid();
+        }
 
         return view;
     }
@@ -62,7 +76,10 @@ public class NoteFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+
     }
+
 
 
     @Override

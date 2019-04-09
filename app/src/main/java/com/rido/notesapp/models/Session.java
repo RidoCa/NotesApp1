@@ -4,6 +4,11 @@ public class Session {
 
     private Setting settings;
     private String user;
+    private int layout;
+
+    public int getLayout() {
+        return layout;
+    }
 
     public Session(Setting settings) {
         this.settings = settings;
@@ -38,6 +43,11 @@ public class Session {
     public void setUser(String user) {
         settings.setUser(user);
         this.user = user;
+    }
+
+    public void setLayout(int layout){
+        settings.setLayoutMode(layout);
+        this.layout = layout;
     }
 
 }

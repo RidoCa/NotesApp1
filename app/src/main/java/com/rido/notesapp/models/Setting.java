@@ -16,6 +16,7 @@ public class Setting {
         return preferences.getString(Constant.SESSION, null);
     }
 
+
     public void setUser(String user) {
         preferences.edit()
                 .putString(Constant.SESSION, user)

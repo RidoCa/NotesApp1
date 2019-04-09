@@ -57,6 +57,11 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return layout;
+    }
+
+    @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Note note = notes.get(i);
         viewHolder.onBindViewHolder(note);
